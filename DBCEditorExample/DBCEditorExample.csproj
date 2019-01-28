@@ -52,6 +52,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataStores\DBCStores.cs" />
+    <Compile Include="DataStores\DBCStores.Load.cs" />
+    <Compile Include="DataStores\DBCStores.Save.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structures\Users.cs" />
