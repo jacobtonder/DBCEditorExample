@@ -105,5 +105,19 @@ namespace DBCEditorExample
                 MessageBox.Show(exception.Message);
             }
         }
+
+        private void ListBox_Users_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListBox_Users.SelectedIndex == -1)
+                return;
+
+            Users user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
+
+            TextBox_Id.Text = user.Id.ToString();
+            TextBox_BirthYear.Text = user.BirthYear.ToString();
+            TextBox_FirstName.Text = user.FirstName;
+            TextBox_LastName.Text = user.LastName;
+            TextBox_Email.Text = user.Email;
+        }
     }
 }
