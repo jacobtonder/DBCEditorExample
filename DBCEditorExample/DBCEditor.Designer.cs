@@ -1,6 +1,6 @@
 ﻿namespace DBCEditorExample
 {
-    partial class Form1
+    partial class DBCEditor
     {
         /// <summary>
         /// Required designer variable.

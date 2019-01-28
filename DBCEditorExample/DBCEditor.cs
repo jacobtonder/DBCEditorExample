@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DBCEditorExample
 {
-    public partial class Form1 : Form
+    public partial class DBCEditor : Form
     {
-        public Form1()
+        public DBCEditor()
         {
             InitializeComponent();
         }
