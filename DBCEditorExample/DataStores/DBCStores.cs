@@ -15,7 +15,7 @@ namespace DBCEditorExample.DataStores
         {
             string dbcFolder = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\DBCFiles\\";
 
-            Users = new DBCFile<Users>(dbcFolder + "Users.dbc", Signature);
+            Users = new DBCFile<Users>(dbcFolder + "Userss.dbc", Signature);
         }
     }
 }

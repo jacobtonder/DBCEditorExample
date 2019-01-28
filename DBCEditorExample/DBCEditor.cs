@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,11 @@ namespace DBCEditorExample
             catch (InvalidSignatureException)
             {
                 MessageBox.Show("Invalid DBC Signature: " + DBCStores.Signature);
+                Close();
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show("DBC file not found: " + ex.Message);
                 Close();
             }
 
