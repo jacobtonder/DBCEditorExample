@@ -9,7 +9,7 @@ namespace DBCEditorExample.DataStores
     {
         public static DBCFile<Users> Users { get; private set; }
 
-        private static readonly string Signature = "WDBC";
+        public static readonly string Signature = "WDBC";
 
         public static void InitFiles()
         {

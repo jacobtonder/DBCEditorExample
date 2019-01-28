@@ -28,20 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ListBox_Users = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // Form1
+            // ListBox_Users
+            // 
+            this.ListBox_Users.FormattingEnabled = true;
+            this.ListBox_Users.Location = new System.Drawing.Point(13, 13);
+            this.ListBox_Users.Name = "ListBox_Users";
+            this.ListBox_Users.Size = new System.Drawing.Size(226, 355);
+            this.ListBox_Users.TabIndex = 0;
+            // 
+            // DBCEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(557, 373);
+            this.Controls.Add(this.ListBox_Users);
+            this.Name = "DBCEditor";
+            this.Text = "DBC Editor";
+            this.Load += new System.EventHandler(this.DBCEditor_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox ListBox_Users;
     }
 }
 
