@@ -31,6 +31,7 @@
             this.ListBox_Users = new System.Windows.Forms.ListBox();
             this.Button_Add = new System.Windows.Forms.Button();
             this.Button_Delete = new System.Windows.Forms.Button();
+            this.Button_Save = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ListBox_Users
@@ -61,11 +62,22 @@
             this.Button_Delete.UseVisualStyleBackColor = true;
             this.Button_Delete.Click += new System.EventHandler(this.Button_Delete_Click);
             // 
+            // Button_Save
+            // 
+            this.Button_Save.Location = new System.Drawing.Point(175, 349);
+            this.Button_Save.Name = "Button_Save";
+            this.Button_Save.Size = new System.Drawing.Size(75, 23);
+            this.Button_Save.TabIndex = 3;
+            this.Button_Save.Text = "Save";
+            this.Button_Save.UseVisualStyleBackColor = true;
+            this.Button_Save.Click += new System.EventHandler(this.Button_Save_Click);
+            // 
             // DBCEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(557, 380);
+            this.Controls.Add(this.Button_Save);
             this.Controls.Add(this.Button_Delete);
             this.Controls.Add(this.Button_Add);
             this.Controls.Add(this.ListBox_Users);
@@ -81,6 +93,7 @@
         private System.Windows.Forms.ListBox ListBox_Users;
         private System.Windows.Forms.Button Button_Add;
         private System.Windows.Forms.Button Button_Delete;
+        private System.Windows.Forms.Button Button_Save;
     }
 }
 

@@ -93,5 +93,17 @@ namespace DBCEditorExample
                 MessageBox.Show(exception.Message);
             }
         }
+
+        private void Button_Save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DBCStores.SaveUsersEditorFiles();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
     }
 }
