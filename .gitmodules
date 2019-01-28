@@ -1,0 +1,3 @@
+[submodule "DBCLib"]
+	path = DBCLib
+	url = https://github.com/jacobtonder/DBCLib
