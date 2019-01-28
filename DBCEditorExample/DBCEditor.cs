@@ -28,14 +28,14 @@ namespace DBCEditorExample
                 DBCStores.InitFiles();
                 DBCStores.LoadUsersEditorFiles();
             }
-            catch (InvalidSignatureException)
+            catch (InvalidSignatureException exception)
             {
-                MessageBox.Show("Invalid DBC Signature: " + DBCStores.Signature);
+                MessageBox.Show("Invalid DBC Signature: " + "found '" + exception.Message + "' expected '" + DBCStores.Signature + "'.");
                 Close();
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException exception)
             {
-                MessageBox.Show("DBC file not found: " + ex.Message);
+                MessageBox.Show("DBC file not found: " + exception.Message);
                 Close();
             }
 
