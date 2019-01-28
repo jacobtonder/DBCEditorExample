@@ -107,6 +107,7 @@
             this.TextBox_FirstName.Name = "TextBox_FirstName";
             this.TextBox_FirstName.Size = new System.Drawing.Size(100, 20);
             this.TextBox_FirstName.TabIndex = 6;
+            this.TextBox_FirstName.TextChanged += new System.EventHandler(this.TextBox_FirstName_TextChanged);
             // 
             // TextBox_LastName
             // 
@@ -114,6 +115,7 @@
             this.TextBox_LastName.Name = "TextBox_LastName";
             this.TextBox_LastName.Size = new System.Drawing.Size(100, 20);
             this.TextBox_LastName.TabIndex = 7;
+            this.TextBox_LastName.TextChanged += new System.EventHandler(this.TextBox_LastName_TextChanged);
             // 
             // Label_Id
             // 
@@ -146,8 +148,11 @@
             // 
             this.TextBox_BirthYear.Location = new System.Drawing.Point(281, 25);
             this.TextBox_BirthYear.Name = "TextBox_BirthYear";
+            this.TextBox_BirthYear.ShortcutsEnabled = false;
             this.TextBox_BirthYear.Size = new System.Drawing.Size(100, 20);
             this.TextBox_BirthYear.TabIndex = 11;
+            this.TextBox_BirthYear.TextChanged += new System.EventHandler(this.TextBox_BirthYear_TextChanged);
+            this.TextBox_BirthYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_BirthYear_KeyPress);
             // 
             // TextBox_Email
             // 
@@ -155,6 +160,7 @@
             this.TextBox_Email.Name = "TextBox_Email";
             this.TextBox_Email.Size = new System.Drawing.Size(206, 20);
             this.TextBox_Email.TabIndex = 12;
+            this.TextBox_Email.TextChanged += new System.EventHandler(this.TextBox_Email_TextChanged);
             // 
             // Label_Email
             // 

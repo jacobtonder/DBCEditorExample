@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBCEditorExample.DataStores;
 using DBCEditorExample.Structures;
+using DBCLib;
 using DBCLib.Exceptions;
 
 namespace DBCEditorExample
@@ -103,7 +104,10 @@ namespace DBCEditorExample
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+                return;
             }
+
+            MessageBox.Show("Success!", "Succesfully saved to the DBC File.");
         }
 
         private void ListBox_Users_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,6 +122,52 @@ namespace DBCEditorExample
             TextBox_FirstName.Text = user.FirstName;
             TextBox_LastName.Text = user.LastName;
             TextBox_Email.Text = user.Email;
+        }
+
+        private void TextBox_BirthYear_TextChanged(object sender, EventArgs e)
+        {
+            Users user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
+
+            user.BirthYear = Convert.ToUInt32(TextBox_BirthYear.Text);
+
+            DBCStores.Users.ReplaceEntry(user.Id, user);
+            ListBox_Users.Items[ListBox_Users.SelectedIndex] = user;
+        }
+
+        private void TextBox_BirthYear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Simple solution to prevent anything but numbers in the text box
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void TextBox_FirstName_TextChanged(object sender, EventArgs e)
+        {
+            Users user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
+
+            user.FirstName = TextBox_FirstName.Text;
+
+            DBCStores.Users.ReplaceEntry(user.Id, user);
+            ListBox_Users.Items[ListBox_Users.SelectedIndex] = user;
+        }
+
+        private void TextBox_LastName_TextChanged(object sender, EventArgs e)
+        {
+            Users user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
+
+            user.LastName = TextBox_LastName.Text;
+
+            DBCStores.Users.ReplaceEntry(user.Id, user);
+            ListBox_Users.Items[ListBox_Users.SelectedIndex] = user;
+        }
+
+        private void TextBox_Email_TextChanged(object sender, EventArgs e)
+        {
+            Users user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
+
+            user.Email = TextBox_Email.Text;
+
+            DBCStores.Users.ReplaceEntry(user.Id, user);
+            ListBox_Users.Items[ListBox_Users.SelectedIndex] = user;
         }
     }
 }
