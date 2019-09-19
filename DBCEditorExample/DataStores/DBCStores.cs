@@ -13,7 +13,7 @@ namespace DBCEditorExample.DataStores
 
         public static void InitFiles()
         {
-            string dbcFolder = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + Path.DirectorySeparatorChar + "DBCFiles" + Path.DirectorySeparatorChar;
+            string dbcFolder = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + Path.DirectorySeparatorChar + "DBCFiles" + Path.DirectorySeparatorChar;
 
             Users = new DBCFile<Users>(dbcFolder + "Users.dbc", Signature);
         }
