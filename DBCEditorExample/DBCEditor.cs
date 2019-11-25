@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBCEditorExample.DataStores;
 using DBCEditorExample.Structures;
-using DBCLib;
 using DBCLib.Exceptions;
 
 namespace DBCEditorExample
@@ -41,7 +33,7 @@ namespace DBCEditorExample
             }
 
             ListBox_Users.Items.Clear();
-            foreach (Users user in DBCStores.Users.Records)
+            foreach (var user in DBCStores.Users.Records)
                 ListBox_Users.Items.Add(user);
 
             ListBox_Users.SelectedIndex = 0;
@@ -52,7 +44,7 @@ namespace DBCEditorExample
             if (ListBox_Users.SelectedIndex == -1)
                 return;
 
-            Users user = new Users()
+            var user = new Users()
             {
                 Id = DBCStores.Users.MaxKey + 1,
                 FirstName = "New",
@@ -82,7 +74,7 @@ namespace DBCEditorExample
 
             try
             {
-                Users user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
+                var user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
 
                 --ListBox_Users.SelectedIndex;
 
@@ -115,7 +107,7 @@ namespace DBCEditorExample
             if (ListBox_Users.SelectedIndex == -1)
                 return;
 
-            Users user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
+            var user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
 
             TextBox_Id.Text = user.Id.ToString();
             TextBox_BirthYear.Text = user.BirthYear.ToString();
@@ -126,7 +118,7 @@ namespace DBCEditorExample
 
         private void TextBox_BirthYear_TextChanged(object sender, EventArgs e)
         {
-            Users user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
+            var user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
 
             user.BirthYear = Convert.ToUInt32(TextBox_BirthYear.Text);
 
@@ -142,7 +134,7 @@ namespace DBCEditorExample
 
         private void TextBox_FirstName_TextChanged(object sender, EventArgs e)
         {
-            Users user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
+            var user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
 
             user.FirstName = TextBox_FirstName.Text;
 
@@ -152,7 +144,7 @@ namespace DBCEditorExample
 
         private void TextBox_LastName_TextChanged(object sender, EventArgs e)
         {
-            Users user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
+            var user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
 
             user.LastName = TextBox_LastName.Text;
 
@@ -162,7 +154,7 @@ namespace DBCEditorExample
 
         private void TextBox_Email_TextChanged(object sender, EventArgs e)
         {
-            Users user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
+            var user = (Users)ListBox_Users.Items[ListBox_Users.SelectedIndex];
 
             user.Email = TextBox_Email.Text;
 
